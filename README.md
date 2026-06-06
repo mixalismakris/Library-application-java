@@ -1,6 +1,3 @@
-# Library-application-java
-Console-based library management system built in Java 17, demonstrating OOP principles (inheritance, polymorphism, interfaces) with object serialization for persistent storage.
-
 # Library Management System
 
 A console-based university library management application written in Java, demonstrating core object-oriented programming principles and file-based data persistence through Java serialization.
@@ -70,8 +67,13 @@ src/gr/university/library/
 ### From the command line
 
 ```bash
-cd "Library Java"
 javac -encoding UTF-8 -d out -cp src $(find src -name "*.java")
+java -cp out gr.university.library.Main
+```
+
+On Windows PowerShell:
+```powershell
+javac -encoding UTF-8 -d out -cp src $(Get-ChildItem -Path src -Filter *.java -Recurse | ForEach-Object FullName)
 java -cp out gr.university.library.Main
 ```
 
@@ -105,7 +107,7 @@ The application gracefully handles:
 ## Notes
 
 - Data is stored in plain serialized form; no encryption is applied.
-- The save file is environment-specific and is not included in the repository.
+- The save file (`library.ser`) is environment-specific and is not included in the repository.
 - This is a coursework project intended for educational purposes.
 
 ## Author
